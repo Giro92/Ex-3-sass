@@ -1,0 +1,25 @@
+$red: red;
+$blue: blue;
+$green: green;
+
+@mixin box-style ($border-color, $color, $font) {
+    border: 1px solid;
+    border-color: $border-color;
+    color: $color;
+    font-size: $font;
+}
+
+article {
+    @include box-style($green, $blue, 1rem);
+    text-align: center;
+}
+
+.one,
+.two {
+    @include box-style(none, red, 1rem);
+}
+
+.three {
+    @include box-style ($blue, $green, 2rem);
+    width: 100%;
+}
